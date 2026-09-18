@@ -109,14 +109,10 @@ function Hero() {
             <span className="inline-flex items-center gap-2"><Check size={17} className="text-brand-green" /> Sem exames médicos</span>
           </div>
         </div>
-        <div className="hero-visual" aria-label="Proteção digital Olé Life">
-          <div className="coverage-ring">
-            <div className="coverage-center">
-              <span>Proteção de</span>
-              <strong>US$ 100 mil</strong>
-              <span>até US$ 500 mil</span>
-            </div>
-          </div>
+        <div className="hero-visual">
+          <figure className="hero-photo">
+            <img src={heroFamily} alt="Pai brincando com a filha, protegidos pela Olé Life" width={1200} height={1200} />
+          </figure>
           <div className="floating-note note-top"><Zap size={18} /><span><strong>10 min</strong> para contratar</span></div>
           <div className="floating-note note-bottom"><ShieldCheck size={18} /><span><strong>5 anos</strong> de preço fixo</span></div>
         </div>
