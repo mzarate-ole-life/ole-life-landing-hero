@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import heroFamily from "@/assets/hero-family.jpg";
 import daniela from "@/assets/testimonial-daniela.jpg";
 import giannina from "@/assets/testimonial-giannina.jpg";
 import juan from "@/assets/testimonial-juan.jpg";
@@ -90,35 +91,33 @@ function Header() {
 function Hero() {
   return (
     <section id="inicio" className="hero-section">
-      <div className="hero-orbit" aria-hidden="true"><div className="hero-orbit-inner" /></div>
       <div className="hero-spark hidden lg:block" aria-hidden="true"><Sparkles /></div>
-      <div className="page-shell relative z-10 grid min-h-[720px] items-center gap-8 py-10 lg:min-h-[760px] lg:grid-cols-[1.1fr_.9fr] lg:py-16">
-        <div className="max-w-4xl">
-          <div className="eyebrow"><span className="status-dot" /> A primeira seguradora de vida digital da América Latina</div>
-          <h1 className="hero-title">Sua vida não espera.<br /><span>Seu seguro também não.</span></h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Proteção de verdade, contratada do seu jeito. Sem exames, sem papelada e com aprovação em minutos.
-          </p>
-          <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-            <a className="button button-primary button-hero" href={quoteUrl} target="_blank" rel="noreferrer">Cotar meu seguro <ArrowRight size={22} /></a>
-            <a className="button button-whatsapp button-hero" href={advisorUrl} target="_blank" rel="noreferrer"><MessageCircle size={22} /> Falar com um assessor</a>
-          </div>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-brand-deep">
-            <span className="inline-flex items-center gap-2"><Check size={17} className="text-brand-green" /> Desde US$ 12/mês</span>
-            <span className="inline-flex items-center gap-2"><Check size={17} className="text-brand-green" /> 100% online</span>
-            <span className="inline-flex items-center gap-2"><Check size={17} className="text-brand-green" /> Sem exames médicos</span>
-          </div>
-        </div>
-        <div className="hero-visual" aria-label="Proteção digital Olé Life">
-          <div className="coverage-ring">
-            <div className="coverage-center">
-              <span>Proteção de</span>
-              <strong>US$ 100 mil</strong>
-              <span>até US$ 500 mil</span>
+      <div className="page-shell relative z-10 py-8 lg:py-14">
+        <div className="hero-panel">
+          <div className="hero-copy">
+            <div className="eyebrow"><span className="status-dot" /> A primeira seguradora de vida digital da América Latina</div>
+            <h1 className="hero-title">Sua vida não espera.<br /><span>Seu seguro também não.</span></h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed md:text-xl">
+              Proteção de verdade, contratada do seu jeito. Sem exames, sem papelada e com aprovação em minutos.
+            </p>
+            <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+              <a className="button button-primary button-hero" href={quoteUrl} target="_blank" rel="noreferrer">Cotar meu seguro <ArrowRight size={22} /></a>
+              <a className="button button-whatsapp button-hero" href={advisorUrl} target="_blank" rel="noreferrer"><MessageCircle size={22} /> Falar com um assessor</a>
             </div>
           </div>
-          <div className="floating-note note-top"><Zap size={18} /><span><strong>10 min</strong> para contratar</span></div>
-          <div className="floating-note note-bottom"><ShieldCheck size={18} /><span><strong>5 anos</strong> de preço fixo</span></div>
+          <figure className="hero-photo">
+            <img src={heroFamily} alt="Pai brincando com a filha, protegidos pela Olé Life" width={1200} height={1200} fetchPriority="high" />
+            <figcaption className="floating-note note-bottom"><ShieldCheck size={18} /><span><strong>5 anos</strong> de preço fixo</span></figcaption>
+          </figure>
+        </div>
+        <div className="hero-strip">
+          <span><Check size={17} /> Desde US$ 12/mês</span>
+          <i aria-hidden="true" />
+          <span><Check size={17} /> 100% online</span>
+          <i aria-hidden="true" />
+          <span><Check size={17} /> Sem exames médicos</span>
+          <i aria-hidden="true" />
+          <span><Zap size={17} /> 10 min para contratar</span>
         </div>
       </div>
       <a className="mobile-sticky-cta md:hidden" href={advisorUrl} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Falar no WhatsApp</a>
