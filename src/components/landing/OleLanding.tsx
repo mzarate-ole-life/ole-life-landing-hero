@@ -91,8 +91,8 @@ function Hero() {
   return (
     <section id="inicio" className="hero-section">
       <div className="hero-orbit" aria-hidden="true"><div className="hero-orbit-inner" /></div>
-      <div className="hero-spark" aria-hidden="true"><Sparkles /></div>
-      <div className="page-shell relative z-10 grid min-h-[calc(100svh-76px)] items-center gap-8 py-10 lg:grid-cols-[1.1fr_.9fr] lg:py-16">
+      <div className="hero-spark hidden lg:block" aria-hidden="true"><Sparkles /></div>
+      <div className="page-shell relative z-10 grid min-h-[720px] items-center gap-8 py-10 lg:min-h-[760px] lg:grid-cols-[1.1fr_.9fr] lg:py-16">
         <div className="max-w-4xl">
           <div className="eyebrow"><span className="status-dot" /> A primeira seguradora de vida digital da América Latina</div>
           <h1 className="hero-title">Sua vida não espera.<br /><span>Seu seguro também não.</span></h1>
