@@ -191,12 +191,13 @@
   .eyebrow { display: inline-flex; align-items: center; gap: .55rem; font-size: .75rem; line-height: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--brand-deep); }
   .eyebrow-light { color: var(--brand-green); }
   .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-green); box-shadow: 0 0 0 5px color-mix(in oklab, var(--brand-green) 18%, transparent); }
-  .hero-orbit { position: absolute; width: 560px; height: 560px; right: -80px; bottom: -110px; border: 110px solid color-mix(in oklab, var(--brand-action) 14%, transparent); border-radius: 50%; }
-  .hero-orbit-inner { position: absolute; inset: 24px; border: 2px solid color-mix(in oklab, var(--brand-green) 55%, transparent); border-radius: 50%; animation: pulse-ring 4s ease-in-out infinite; }
   .hero-spark { position: absolute; right: 42%; top: 12%; color: var(--brand-green); }
-  .hero-visual { position: relative; display: grid; place-items: center; }
-  .hero-photo { position: relative; width: 100%; margin: 0; overflow: hidden; border-radius: calc(var(--radius) * 1.6); background: linear-gradient(135deg, var(--brand-action), var(--brand-green)); box-shadow: 0 35px 80px color-mix(in oklab, var(--brand-deep) 22%, transparent); }
-  .hero-photo img { display: block; width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 25%; }
+  .hero-panel { position: relative; display: grid; overflow: hidden; border-radius: calc(var(--radius) * 1.8); background: linear-gradient(150deg, color-mix(in oklab, var(--brand-action) 16%, var(--background)), color-mix(in oklab, var(--brand-green) 24%, var(--background))); box-shadow: 0 30px 80px color-mix(in oklab, var(--brand-deep) 16%, transparent); }
+  .hero-copy { padding: 2.25rem 1.5rem 2rem; color: var(--brand-deep); }.hero-copy p { color: color-mix(in oklab, var(--brand-deep) 80%, transparent); }
+  .hero-photo { position: relative; margin: 0; align-self: stretch; overflow: hidden; }
+  .hero-photo img { display: block; width: 100%; height: 100%; aspect-ratio: 16/11; object-fit: cover; object-position: center 22%; }
+  .hero-strip { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; color: var(--brand-deep); font-size: .88rem; font-weight: 700; }
+  .hero-strip span { display: inline-flex; align-items: center; gap: .5rem; }.hero-strip svg { color: var(--brand-green); }.hero-strip i { width: 1px; height: 18px; background: var(--border); }
   .floating-note { position: absolute; display: flex; align-items: center; gap: .65rem; min-width: 168px; padding: .85rem 1rem; border-radius: var(--radius); background: var(--background); color: var(--brand-deep); box-shadow: 0 16px 45px color-mix(in oklab, var(--brand-deep) 14%, transparent); font-size: .8rem; }
   .floating-note svg { color: var(--brand-action); }.floating-note span { display: flex; flex-direction: column; }.note-top { top: 5%; right: -.5rem; }.note-bottom { bottom: 5%; left: -.5rem; }
   .mobile-sticky-cta { position: fixed; z-index: 40; right: 1rem; bottom: 1rem; min-height: 52px; display: inline-flex; align-items: center; gap: .55rem; padding: .75rem 1.1rem; border-radius: 999px; background: var(--brand-green); color: var(--brand-deep); font-weight: 800; box-shadow: 0 14px 40px color-mix(in oklab, var(--brand-deep) 25%, transparent); }
