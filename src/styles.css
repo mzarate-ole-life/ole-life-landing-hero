@@ -213,6 +213,6 @@
 }
 
 @media (min-width: 640px) { .step-grid,.testimonial-grid { grid-template-columns: repeat(3,1fr); }.footer-main { grid-template-columns: 2fr 1fr 1fr 1fr; }.comparison-grid { grid-template-columns: .65fr 1fr 1fr; gap: 1rem; padding: 1.1rem 1.5rem; }.comparison-head { display: grid; background: var(--soft); font-size: .72rem; font-weight: 800; text-transform: uppercase; color: var(--muted-foreground); }.timeline { grid-template-columns: repeat(3,1fr); }.footer-legal { grid-template-columns: 2fr 1fr; }.footer-legal span { text-align: right; } }
-@media (min-width: 1024px) { .hero-visual { display: grid; }.section-space { padding-block: 7rem; }.closing-section { padding-block: 8rem; } }
+@media (min-width: 1024px) { .hero-photo img { aspect-ratio: 1/1.05; }.section-space { padding-block: 7rem; }.closing-section { padding-block: 8rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 @keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: .65; } 50% { transform: scale(1.05); opacity: 1; } }
