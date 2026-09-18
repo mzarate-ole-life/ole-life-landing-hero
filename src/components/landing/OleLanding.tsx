@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import heroFamily from "@/assets/hero-family.jpg";
 import daniela from "@/assets/testimonial-daniela.jpg";
 import giannina from "@/assets/testimonial-giannina.jpg";
 import juan from "@/assets/testimonial-juan.jpg";
