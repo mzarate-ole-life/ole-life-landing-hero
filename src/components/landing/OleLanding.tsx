@@ -4,6 +4,7 @@ import {
   Check,
   ChevronDown,
   Clock3,
+  DollarSign,
   FileCheck2,
   Menu,
   MessageCircle,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 import heroFamily from "@/assets/hero-family.jpg";
+import logoOleLife from "@/assets/logo-ole-life.svg";
 import daniela from "@/assets/testimonial-daniela.jpg";
 import giannina from "@/assets/testimonial-giannina.jpg";
 import juan from "@/assets/testimonial-juan.jpg";
@@ -38,11 +40,18 @@ const faqs = [
 ];
 
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
+  if (inverse) {
+    return (
+      <a href="#inicio" className="inline-flex items-center gap-2" aria-label="Olé Life — início">
+        <span className="brand-spark" aria-hidden="true"><i /><i /><i /><i /></span>
+        <span className="text-2xl font-semibold text-primary-foreground">Olé</span>
+        <span className="text-xs font-semibold uppercase text-primary-foreground/70">Life</span>
+      </a>
+    );
+  }
   return (
-    <a href="#inicio" className="inline-flex items-center gap-2" aria-label="Olé Life — início">
-      <span className="brand-spark" aria-hidden="true"><i /><i /><i /><i /></span>
-      <span className={inverse ? "text-2xl font-semibold text-primary-foreground" : "text-2xl font-semibold text-brand-action"}>Olé</span>
-      <span className={inverse ? "text-xs font-semibold uppercase text-primary-foreground/70" : "text-xs font-semibold uppercase text-muted-foreground"}>Life</span>
+    <a href="#inicio" className="inline-flex items-center" aria-label="Olé Life — início">
+      <img src={logoOleLife} alt="Olé Life" className="h-14 w-auto" />
     </a>
   );
 }
@@ -64,6 +73,7 @@ function Header() {
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
           <a className="nav-link" href="#sobre">Quem somos</a>
           <a className="nav-link" href="#produto">Produto</a>
+          <a className="nav-link inline-flex items-center gap-1.5" href="#nomad">Clientes <span className="nomad-badge">NOMAD</span></a>
           <a className="nav-link" href="#contato">Contato</a>
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
@@ -79,6 +89,7 @@ function Header() {
         <div className="mobile-menu lg:hidden">
           <a href="#sobre" onClick={() => setOpen(false)}>Quem somos</a>
           <a href="#produto" onClick={() => setOpen(false)}>Produto</a>
+          <a className="inline-flex items-center gap-1.5" href="#nomad" onClick={() => setOpen(false)}>Clientes <span className="nomad-badge">NOMAD</span></a>
           <a href="#contato" onClick={() => setOpen(false)}>Contato</a>
           <div className="rating-pill justify-center"><span>4.8</span><span className="text-rating">★</span><span>no Google</span></div>
           <a className="button button-primary w-full" href={quoteUrl} target="_blank" rel="noreferrer">Cotar agora <ArrowRight size={19} /></a>
@@ -92,13 +103,13 @@ function Hero() {
   return (
     <section id="inicio" className="hero-section">
       <div className="hero-spark hidden lg:block" aria-hidden="true"><Sparkles /></div>
-      <div className="page-shell relative z-10 py-8 lg:py-14">
+      <div className="page-shell relative z-10 pt-4 pb-8 lg:pt-8 lg:pb-14">
         <div className="hero-panel">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="status-dot" /> A primeira seguradora de vida digital da América Latina</div>
-            <h1 className="hero-title">Sua vida não espera.<br /><span>Seu seguro também não.</span></h1>
+            <div className="eyebrow"><span className="status-dot" /> 100% digital. Sem burocracia.</div>
+            <h1 className="hero-title">O seguro de vida,<br /><span>redesenhado do zero.</span></h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed md:text-xl">
-              Proteção de verdade, contratada do seu jeito. Sem exames, sem papelada e com aprovação em minutos.
+              Sem letras miúdas, sem burocracia. Peça sua cotação em minutos e proteja quem você mais ama, hoje.
             </p>
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               <a className="button button-primary button-hero" href={quoteUrl} target="_blank" rel="noreferrer">Cotar meu seguro <ArrowRight size={22} /></a>
@@ -106,12 +117,15 @@ function Hero() {
             </div>
           </div>
           <figure className="hero-photo">
-            <img src={heroFamily} alt="Pai brincando com a filha, protegidos pela Olé Life" width={1200} height={1200} fetchPriority="high" />
+            <span className="hero-photo-orb" aria-hidden="true" />
+            <span className="hero-photo-circle">
+              <img src={heroFamily} alt="Pai brincando com a filha, protegidos pela Olé Life" width={1200} height={1200} fetchPriority="high" />
+            </span>
             <figcaption className="floating-note note-bottom"><ShieldCheck size={18} /><span><strong>5 anos</strong> de preço fixo</span></figcaption>
           </figure>
         </div>
         <div className="hero-strip">
-          <span><Check size={17} /> Desde US$ 12/mês</span>
+          <span><Check size={17} /> Desde US$ 12/mês <small className="hero-strip-brl">(≈ R$ 63)</small></span>
           <i aria-hidden="true" />
           <span><Check size={17} /> 100% online</span>
           <i aria-hidden="true" />
@@ -176,9 +190,74 @@ function Product() {
             <span>Cobertura de vida</span><strong>US$ 100 mil</strong><span>até US$ 500 mil</span>
           </div>
           <div className="product-grid">
-            <div><span>A partir de</span><strong>US$ 12<small>/mês</small></strong></div>
+            <div><DollarSign /><span>A partir de</span><strong>US$ 12<small>/mês</small></strong></div>
             <div><Clock3 /><span>Preço fixo por</span><strong>5 anos</strong></div>
             <div className="wide"><ShieldCheck /><span>Coberturas adicionais</span><strong>Morte acidental e invalidez permanente</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const usdToBrl = [
+  ["A partir de", "US$ 12", "/mês", "R$ 63", "/mês"],
+  ["Cobertura mínima", "US$ 100 mil", "", "R$ 526 mil", ""],
+  ["Cobertura máxima", "US$ 500 mil", "", "R$ 2,63 milhões", ""],
+];
+
+function CurrencyReference() {
+  return (
+    <section className="currency-section" aria-labelledby="currency-title">
+      <div className="page-shell grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <span className="eyebrow eyebrow-inverse">Fale a língua do dólar</span>
+          <h2 id="currency-title" className="mt-5 section-title text-primary-foreground">Seus valores, também em reais.</h2>
+          <p className="mt-5 max-w-md text-lg leading-relaxed font-medium text-brand-deep">
+            Toda a proteção da Olé Life é cotada em dólar. Para facilitar, aqui vai a referência em reais dos valores que você já viu nesta página.
+          </p>
+        </div>
+        <div className="currency-card">
+          <span className="currency-card-eyebrow">Referência em reais</span>
+          {usdToBrl.map(([label, usd, usdSuffix, brl, brlSuffix]) => (
+            <div className="currency-row" key={label}>
+              <div>
+                <span>{label}</span>
+                <strong>{usd}<small>{usdSuffix}</small></strong>
+              </div>
+              <ArrowRight size={18} className="currency-row-arrow" aria-hidden="true" />
+              <div className="currency-row-brl">
+                <strong>{brl}<small>{brlSuffix}</small></strong>
+              </div>
+            </div>
+          ))}
+          <p className="currency-note">US$ 1 = R$ 5,26 · cotação ilustrativa, sujeita a variação cambial.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NomadClients() {
+  return (
+    <section id="nomad" className="section-space bg-soft" aria-labelledby="nomad-title">
+      <div className="page-shell grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr]">
+        <div>
+          <span className="eyebrow inline-flex items-center gap-2">Parceria <span className="nomad-badge">NOMAD</span></span>
+          <h2 id="nomad-title" className="mt-5 section-title">Uma condição especial para clientes Nomad.</h2>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            Cobertura em dólares e contratação 100% digital — pensada para quem já pensa em dólar no dia a dia.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">Seção placeholder — condições e copy final a confirmar com o time de parcerias.</p>
+          <a className="button button-primary mt-8" href={quoteUrl} target="_blank" rel="noreferrer">Ver condições Nomad <ArrowRight size={19} /></a>
+        </div>
+        <div className="product-panel">
+          <div className="product-main">
+            <span>Cobertura de vida</span><strong>US$ 100 mil</strong><span>até US$ 500 mil</span>
+          </div>
+          <div className="product-grid">
+            <div><ShieldCheck /><span>Feito para</span><strong className="inline-flex items-center gap-2">Clientes <span className="nomad-badge">NOMAD</span></strong></div>
+            <div><Clock3 /><span>Preço fixo por</span><strong>5 anos</strong></div>
           </div>
         </div>
       </div>
@@ -258,5 +337,5 @@ function Footer() {
 }
 
 export function OleLanding() {
-  return <><Header /><main><Hero /><Comparison /><HowItWorks /><Product /><Trust /><Testimonials /><Faq /><Closing /></main><Footer /></>;
+  return <><Header /><main><Hero /><Comparison /><HowItWorks /><Product /><CurrencyReference /><NomadClients /><Trust /><Testimonials /><Faq /><Closing /></main><Footer /></>;
 }
